@@ -1,16 +1,16 @@
 
 
 function twoSum(nums, target) {
-    let obj = {}
+    let hash = {};
     nums.forEach(num => {
-        obj[num] = num;
+        hash[num] = num;
     });
     
     for (let i = 0; i < nums.length; i++) {
-        const complement = target - nums[i];
+        const partner = target - nums[i];
         
-        if(obj.hasOwnProperty(complement)) {
-            const index = nums.indexOf(complement);
+        if(hash.hasOwnProperty(partner)) {
+            const index = nums.indexOf(partner);
             if(index !== i) {
                 return new Array (i,index);
                 break;
